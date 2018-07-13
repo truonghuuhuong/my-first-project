@@ -1,8 +1,8 @@
 pipeline {
     agent any
     tools {
-        jdk 'localJDK'
-        maven 'localMaven'
+        jdk 'jdk8'
+        maven 'maven3'
     }
     stages {
         stage('Install') {
@@ -12,7 +12,7 @@ pipeline {
         }
 		stage('Sonar') {
             steps {
-                sh "mvn sonar:sonar -Dsonar.host.url=172.17.0.2:9111"
+                sh "mvn sonar:sonar -Dsonar.host.url=http://localhost:9111 -Dsonar.login=6724abe65b800ef674aa2f0114d2bd20e3ab3a5e"
             }
         }
     }
