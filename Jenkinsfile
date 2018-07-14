@@ -12,7 +12,7 @@ pipeline {
         }
 		stage('Sonar') {
             steps {
-                sh "mvn sonar:sonar -Dsonar.host.url=localhost:9111 -Dsonar.login=6724abe65b800ef674aa2f0114d2bd20e3ab3a5e"
+                sh "mvn sonar:sonar -Dsonar.host.url=http://172.22.240.1:9222 -Dsonar.login=2197bb785b476c5757551be05f0687e9c427a50f"
             }
         }
     }
